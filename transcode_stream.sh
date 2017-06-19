@@ -14,4 +14,9 @@ mkdir -p ${CAMERA_DIR}
 
 # Set -crf 0 after -preset slow to enable lossless mode
 ffmpeg -loglevel info -y -nostdin -overrun_nonfatal 1 -i "${INPUT_STREAM}" -vcodec copy -f mpegts "${CAMERA_DIR}/${CAMERA}.mp4"
-#ffmpeg -loglevel info -y -nostdin -an -overrun_nonfatal 1 -i "${INPUT_STREAM}" -an -vcodec libx264 -preset slow -f mpegts "${CAMERA_DIR}/${CAMERA}.mp4"
+#CAMERA_DIR="/mnt/cache/cams"
+#CAMERA="cam1"
+#
+## Set -crf 0 after -preset slow to enable lossless mode
+#ffmpeg -loglevel info -y -nostdin -an -r 50 -i "${INPUT_STREAM}" -an -vcodec copy -f mpegts "${CAMERA_DIR}/${CAMERA}.mp4"
+##ffmpeg -loglevel info -y -nostdin -an -r 50 -i "${INPUT_STREAM}" -an -vcodec h264_nvenc -preset slow -f mpegts "${CAMERA_DIR}/${CAMERA}.mp4"
